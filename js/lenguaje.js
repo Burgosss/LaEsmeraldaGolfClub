@@ -85,9 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".carousel-slide:nth-child(3) p").textContent = translations[lang].fine_dining_desc;
     document.querySelector(".carousel-slide:nth-child(4) h2").textContent = translations[lang].expert_instruction;
     document.querySelector(".carousel-slide:nth-child(4) p").textContent = translations[lang].expert_instruction_desc;
-    document.querySelector(".hero-cta:nth-child(1) .cta-btn").textContent = translations[lang].book;
-    document.querySelector(".hero-cta:nth-child(2) .cta-btn").textContent = translations[lang].team;
-
+    document.querySelector(".cta-btn").textContent = translations[lang].book;
+    document.querySelector("#navas-team-link").textContent = translations[lang].team;
   }
   // Translations object and changeLanguage function
 
