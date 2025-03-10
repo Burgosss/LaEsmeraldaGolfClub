@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - La Esmeralda Country Club</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form-container">
+            <h1 class="form-title">Welcome Back</h1>
+            <form id="login-form" method="POST" action="login.php" novalidate>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    <div id="email-error" class="error-message">Please enter a valid email address.</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                    <div id="password-error" class="error-message">Password must be at least 8 characters.</div>
+                </div>
+                <div class="button-container">
+                    <button type="submit" id="login-button" class="btn-primary" disabled>Log In</button>
+                    <button class="btn-primary" onclick="window.location.href='../index.html';">
+                        Back to Home Page
+                    </button>
+                </div>                
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </form>
+            
+            <div class="form-footer">
+                <p>Don't have an account?</p>
+                <a href="#">Sign Up for La Esmeralda</a>
+            </div>
+        </div>
+        <div class="login-image"></div>
+    </div>
+    <script src="../js/login.js"></script>  
+</body>
+</html>

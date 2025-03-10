@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url('../img/don-stouder-JRWvMn8QFwo-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .membership-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+  }
+  
+  .membership-form-container {
+    padding: 40px;
+  }
+  
+  .form-title {
+    color: #1a472a;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-control:focus {
+    border-color: #1a472a;
+    outline: none;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+  }
+  
+  .payment-section {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+  }
+  
+  .payment-section h2 {
+    color: #1a472a;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  
+  .btn-primary {
+    background-color: #1a472a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #143e22;
+  }
+  
+  .form-footer {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .form-footer p {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .form-footer a {
+    color: #1a472a;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .form-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .membership-form-container {
+      padding: 25px;
+    }
+    
+    .form-row {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
