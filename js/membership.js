@@ -128,8 +128,33 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (!submitButton.disabled) {
-            alert('Membership registration successful! Redirecting to homepage...');
-            window.location.href = '../index.html';
+            // Create FormData object to send to server
+            const formData = new FormData();
+            formData.append('username', usernameInput.value);
+            formData.append('firstName', firstNameInput.value);
+            formData.append('lastName', lastNameInput.value);
+            formData.append('email', emailInput.value);
+            formData.append('phone', phoneInput.value);
+            formData.append('address', addressInput.value);
+            
+            // Send data to server
+            fetch('../Usuario/register_member.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Membership registration successful! Redirecting to homepage...');
+                    window.location.href = '../index.html';
+                } else {
+                    alert('Registration error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred during registration. Please try again.');
+            });
         }
     });
 
