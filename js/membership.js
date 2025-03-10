@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const expiryDateError = document.getElementById('expiryDate-error');
     const cvvError = document.getElementById('cvv-error');
 
-    // Validation functions
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -128,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (!submitButton.disabled) {
-            // Create FormData object to send to server
             const formData = new FormData();
             formData.append('username', usernameInput.value);
             formData.append('firstName', firstNameInput.value);
@@ -137,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('phone', phoneInput.value);
             formData.append('address', addressInput.value);
             
-            // Send data to server
             fetch('../Usuario/register_member.php', {
                 method: 'POST',
                 body: formData

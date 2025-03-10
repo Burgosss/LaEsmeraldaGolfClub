@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailError = document.getElementById('email-error');
     const passwordError = document.getElementById('password-error');
 
-    // Validation functions
+
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -55,12 +55,11 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         
         if (!loginButton.disabled) {
-            // Create FormData object
+
             const formData = new FormData();
             formData.append('email', emailInput.value);
             formData.append('password', passwordInput.value);
             
-            // Send data to server
             fetch('../login.php', {
                 method: 'POST',
                 body: formData
@@ -68,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Redirect to member dashboard or home page on successful login
                     window.location.href = '../index.html';
                 } else {
                     alert('Login failed: ' + data.message);
@@ -81,6 +79,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Initialize button state
     loginButton.disabled = true;
 });
