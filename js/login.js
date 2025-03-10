@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('password', passwordInput.value);
             
             // Send data to server
-            fetch('login.php', {
+            fetch('../login.php', {
                 method: 'POST',
                 body: formData
             })

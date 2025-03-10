@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->num_rows > 0 && password_verify($password, $hashed_password)) {
         $_SESSION['usuario_id'] = $id;
         $_SESSION['nombre'] = $nombre;
-        header("Location: index.html"); // Redirige al Home
+        header("Location: ../index.html"); // Redirige al Home
     } else {
-        echo "Credenciales incorrectas.";
+        echo json_encode(['success' => false, 'message' => 'Credenciales incorrectas.']);
     }
 
     $stmt->close();
