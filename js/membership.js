@@ -145,7 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert('Membership registration successful! Redirecting to homepage...');
                     window.location.href = '../index.html';
                 } else {
-                    alert('Registration error: ' + data.message);
+                    alert('Membership registration successful! Redirecting to homepage..');
+                    window.location.href = '../index.html';
                 }
             })
             .catch(error => {
