@@ -1,6 +1,6 @@
-drop database if exists la_esmeralda;
-CREATE DATABASE la_esmeralda;
-USE la_esmeralda;
+drop database if exists golfclubesm;
+CREATE DATABASE golfclubesm;
+USE golfclubesm;
 
 -- Tabla de Usuarios
 CREATE TABLE usuarios (

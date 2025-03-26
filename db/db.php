@@ -1,8 +1,8 @@
 <?php
-    $host = "localhost"; 
-    $user = "root";      
-    $password = "";    
-    $dbname = "la_esmeralda"; 
+    $host = "mysql.webcindario.com"; 
+    $user = "golfclubesm";      
+    $password = "zF9TkjGwcu";    
+    $dbname = "golfclubesm"; 
 
     $conn = new mysqli($host, $user, $password, $dbname);
 
