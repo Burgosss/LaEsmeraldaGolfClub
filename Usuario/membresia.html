@@ -48,6 +48,19 @@
           <input type="text" id="address" name="address" class="form-control" placeholder="Enter your address" required>
           <div id="address-error" class="error-message">Address is required.</div>
         </div>
+
+        <div class="form-group">
+          <label for="membership">Membership</label>
+          <select id="membership" name="membership" class="form-control" required>
+            <option value="">Select a membership</option>
+            <option value="gold">VIP Membership</option>
+            <option value="silver">GOLD Membership</option>
+            <option value="bronze">SILVER Membership</option>
+          </select>
+          <div id="membership-error" class="error-message">Membership is required.</div>
+        </div>
+
+        
         
         <div class="payment-section">
           <h2>Payment Information</h2>

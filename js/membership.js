@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailInput = document.getElementById('email');
     const phoneInput = document.getElementById('phone');
     const addressInput = document.getElementById('address');
+
+    const membershipInput = document.getElementById('membership');
     const cardNumberInput = document.getElementById('cardNumber');
     const expiryDateInput = document.getElementById('expiryDate');
     const cvvInput = document.getElementById('cvv');
@@ -89,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isValidEmail(emailInput.value) &&
             isValidPhone(phoneInput.value) &&
             addressInput.value.trim() !== '' &&
+            membershipInput.value.trim() !== '' &&
             isValidCardNumber(cardNumberInput.value) &&
             isValidExpiryDate(expiryDateInput.value) &&
             isValidCVV(cvvInput.value)
@@ -112,6 +115,10 @@ document.addEventListener('DOMContentLoaded', function () {
         cardNumberInput.value = formattedVal.substring(0, 19);
         validateField(cardNumberInput, cardNumberError, isValidCardNumber);
     });
+
+    membershipInput.addEventListener('change', () => {
+        validateField(membershipInput, document.getElementById('membership-error'), val => val !== '');
+    });    
 
     expiryDateInput.addEventListener('input', function () {
         let val = expiryDateInput.value.replace(/\D/g, '');
