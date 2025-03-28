@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
     $address = $_POST['address'] ?? '';
-    $membershipId = $_POST['membershipId'] ?? 1;
+    $membership = $_POST['membership'] ?? '';
 
-    // Validaciones
-    if (empty($username) || empty($firstName) || empty($lastName) || empty($email) || empty($phone) || empty($address)) {
+    // Validaciones básicas
+    if (empty($username) || empty($firstName) || empty($lastName) || empty($email) || empty($phone) || empty($address) || empty($membership)) {
         echo json_encode(['success' => false, 'message' => 'All fields are required']);
         exit;
     }
@@ -26,6 +26,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    // Validar membresía seleccionada
+    $membershipMap = [
+        'gold' => 2,    // ID de membresía para Oro
+        'silver' => 3,  // ID de membresía para Plata
+        'bronze' => 1   // ID de membresía para VIP
+    ];
+
+    if (!array_key_exists($membership, $membershipMap)) {
+        echo json_encode(['success' => false, 'message' => 'Invalid membership selected']);
+        exit;
+    }
+
+    $membershipId = $membershipMap[$membership];
+
     // Crear contraseña predeterminada
     $default_password = password_hash($username . '123', PASSWORD_DEFAULT);
 
@@ -38,9 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $userId = $conn->insert_id;
 
-        // Insertar membresía
+        // Calcular fechas de la membresía
         $startDate = date('Y-m-d');
         $endDate = date('Y-m-d', strtotime('+6 months'));
+
+        // Insertar membresía
         $membershipStmt = $conn->prepare("INSERT INTO usuario_membresia (usuario_id, membresia_id, fecha_inicio, fecha_fin, estado) VALUES (?, ?, ?, ?, 'activa')");
         $membershipStmt->bind_param("iiss", $userId, $membershipId, $startDate, $endDate);
         $membershipStmt->execute();
