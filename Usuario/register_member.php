@@ -43,10 +43,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Crear contraseña predeterminada
     $default_password = password_hash($username . '123', PASSWORD_DEFAULT);
 
-    // Transacción
+    // Transaction
     $conn->begin_transaction();
     try {
-        // Insertar usuario
+        // Check if email already exists
+        $checkEmail = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+        $checkEmail->bind_param("s", $email);
+        $checkEmail->execute();
+        $checkEmail->store_result();
+        
+        if ($checkEmail->num_rows > 0) {
+            throw new Exception("Email already registered");
+        }
+        $checkEmail->close();
+
+        // Insert user
         $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, password, telefono, direccion) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssss", $firstName, $lastName, $email, $default_password, $phone, $address);
         $stmt->execute();
@@ -66,13 +77,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (Exception $e) {
         $conn->rollback();
         error_log($e->getMessage());
-        echo json_encode(['success' => false, 'message' => 'An error occurred during registration']);
+        echo json_encode(['success' => false, 'message' => $e->getMessage()]);
     } finally {
-        $stmt->close();
-        if (isset($membershipStmt)) {
-            $membershipStmt->close();
-        }
-        $conn->close();
+        if (isset($stmt)) $stmt->close();
+        if (isset($membershipStmt)) $membershipStmt->close();
     }
 } else {
     echo json_encode(['success' => false, 'message' => 'Invalid request method']);
