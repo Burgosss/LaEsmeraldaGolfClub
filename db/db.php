@@ -5,10 +5,7 @@ error_reporting(E_ALL);
 
 $host = "mysql.webcindario.com"; 
 $user = "golfclubesm";      
-$password = "golfclubesm";    
-$host = "localhost"; 
-$user = "root";      
-$password = "";    
+$password = "golfclubesm";     
 $dbname = "golfclubesm"; 
 
 
