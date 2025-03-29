@@ -5,8 +5,10 @@ error_reporting(E_ALL);
 
 $host = "mysql.webcindario.com"; 
 $user = "golfclubesm";      
-$password = "zF9TkjGwcu";    
+$password = "golfclubesm";    
 $dbname = "golfclubesm"; 
+
+
 
 $conn = new mysqli($host, $user, $password, $dbname);
 
