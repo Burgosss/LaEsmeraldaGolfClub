@@ -8,31 +8,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
     $address = $_POST['address'] ?? '';
-    
-    // Determine membership ID based on the dropdown value
-    $membershipType = $_POST['membership'] ?? '';
-    $membershipIdMap = [
-        'bronze' => 1, // Silver membership from SQL script
-        'silver' => 2, // Gold membership from SQL script
-        'gold' => 3    // VIP membership from SQL script
-    ];
-    $membershipId = $membershipIdMap[$membershipType] ?? 1;
+    $membership = $_POST['membership'] ?? '';
 
-    // Validations
-    $errors = [];
-    if (empty($username)) $errors[] = 'Username is required';
-    if (empty($firstName)) $errors[] = 'First name is required';
-    if (empty($lastName)) $errors[] = 'Last name is required';
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Invalid email format';
-    if (empty($phone) || !preg_match('/^\d{10}$/', $phone)) $errors[] = 'Invalid phone number';
-    if (empty($address)) $errors[] = 'Address is required';
-
-    if (!empty($errors)) {
-        echo json_encode(['success' => false, 'message' => implode(', ', $errors)]);
+    // Validaciones básicas
+    if (empty($username) || empty($firstName) || empty($lastName) || empty($email) || empty($phone) || empty($address) || empty($membership)) {
+        echo json_encode(['success' => false, 'message' => 'All fields are required']);
         exit;
     }
 
-    // Create default password
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['success' => false, 'message' => 'Invalid email format']);
+        exit;
+    }
+
+    if (!preg_match('/^\d{10}$/', $phone)) {
+        echo json_encode(['success' => false, 'message' => 'Invalid phone number format']);
+        exit;
+    }
+
+    // Validar membresía seleccionada
+    $membershipMap = [
+        'gold' => 2,    // ID de membresía para Oro
+        'silver' => 3,  // ID de membresía para Plata
+        'bronze' => 1   // ID de membresía para VIP
+    ];
+
+    if (!array_key_exists($membership, $membershipMap)) {
+        echo json_encode(['success' => false, 'message' => 'Invalid membership selected']);
+        exit;
+    }
+
+    $membershipId = $membershipMap[$membership];
+
+    // Crear contraseña predeterminada
     $default_password = password_hash($username . '123', PASSWORD_DEFAULT);
 
     // Transaction
@@ -55,9 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $userId = $conn->insert_id;
 
-        // Insert membership
+        // Calcular fechas de la membresía
         $startDate = date('Y-m-d');
         $endDate = date('Y-m-d', strtotime('+6 months'));
+
+        // Insertar membresía
         $membershipStmt = $conn->prepare("INSERT INTO usuario_membresia (usuario_id, membresia_id, fecha_inicio, fecha_fin, estado) VALUES (?, ?, ?, ?, 'activa')");
         $membershipStmt->bind_param("iiss", $userId, $membershipId, $startDate, $endDate);
         $membershipStmt->execute();
