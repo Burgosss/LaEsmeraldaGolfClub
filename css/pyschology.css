@@ -1,0 +1,221 @@
+/* Psychology Page Styles */
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: linear-gradient(to right, #1a472a, #0d2e1a);
+    color: white;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Psychology Content */
+.psychology-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.mental-technique {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.mental-technique:hover {
+    transform: translateY(-5px);
+}
+
+.mental-technique img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.mental-technique h2 {
+    color: #1a472a;
+    padding: 15px;
+}
+
+.mental-technique p {
+    color: #555;
+    padding: 0 15px 15px;
+    flex-grow: 1;
+}
+
+.mental-technique .read-more {
+    text-align: center;
+    margin: 15px auto;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1a472a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.mental-technique .read-more:hover {
+    background: #0d2e1a;
+}
+
+/* Psychology Experts */
+.psychology-experts {
+    background: #f5f5f5;
+    padding: 40px 20px;
+}
+
+.psychology-experts h2 {
+    text-align: center;
+    color: #1a472a;
+    margin-bottom: 30px;
+}
+
+.expert-profiles {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.expert {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.expert:hover {
+    transform: translateY(-5px);
+}
+
+.expert img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.expert h3 {
+    color: #1a472a;
+    margin-bottom: 10px;
+}
+
+.expert p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.expert .contact-expert {
+    padding: 8px 15px;
+    background: #1a472a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.expert .contact-expert:hover {
+    background: #0d2e1a;
+}
+
+/* Resources Section */
+.resources {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.resources h2 {
+    text-align: center;
+    color: #1a472a;
+    margin-bottom: 20px;
+}
+
+.resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resource-list li {
+    background: #fff;
+    border: 1px solid #1a472a;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: background 0.3s ease;
+}
+
+.resource-list li a {
+    text-decoration: none;
+    color: #1a472a;
+    font-weight: 500;
+}
+
+.resource-list li:hover {
+    background: #1a472a;
+    color: white;
+}
+
+.resource-list li:hover a {
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #1a472a;
+    color: white;
+    padding: 20px;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer .social:hover {
+    color: #f0c040;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .psychology-content {
+        grid-template-columns: 1fr;
+    }
+
+    .expert-profiles {
+        flex-direction: column;
+    }
+}
