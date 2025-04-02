@@ -35,6 +35,18 @@ CREATE TABLE usuario_membresia (
     FOREIGN KEY (membresia_id) REFERENCES membresias(id) ON DELETE CASCADE
 );
 
+CREATE TABLE sugerencias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    telefono VARCHAR(20),
+    estatus_membresia ENUM('member', 'guest', 'former-member', 'interested') NOT NULL,
+    categoria ENUM('golf-course', 'facilities', 'service', 'restaurant', 'pro-shop', 'events', 'membership', 'other') NOT NULL,
+    sugerencia TEXT NOT NULL,
+    fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- Insertar usuarios
 INSERT INTO usuarios (nombre, apellido, email, password, telefono, direccion) VALUES
 ('Juan', 'Pérez', 'juan.perez@email.com', 'hashedpassword123', '1234567890', 'Calle 123, Ciudad'),

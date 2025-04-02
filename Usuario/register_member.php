@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Crear contraseña predeterminada
     $default_password = $firstName . '123';
+    $hashed_password = password_hash($default_password, PASSWORD_BCRYPT);
 
     // Transaction
     $conn->begin_transaction();
@@ -59,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Insert user
         $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, password, telefono, direccion) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $firstName, $lastName, $email, $default_password, $phone, $address);
+        $stmt->bind_param("ssssss", $firstName, $lastName, $email, $hashed_password, $phone, $address);
         $stmt->execute();
         $userId = $conn->insert_id;
 

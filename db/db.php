@@ -3,10 +3,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$host = "mysql.webcindario.com"; 
-$user = "golfclubesm";      
-$password = "golfclubesm";     
+$host = "localhost"; 
+$user = "root";      
+$password = "";     
 $dbname = "golfclubesm"; 
+
+#$host = "mysql.webcindario.com"; 
+#$user = "golfclubesm";      
+#$password = "golfclubesm";     
+#$dbname = "golfclubesm"; 
 
 
 

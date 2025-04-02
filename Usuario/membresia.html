@@ -10,7 +10,7 @@
   <div class="membership-container">
     <div class="membership-form-container">
       <h1 class="form-title" data-i18n="membership_heading">Become a Member</h1>
-      <form id="membership-form" method="POST" novalidate>
+      <form id="membership-form" method="POST" action="insertar_sugerencia.php" novalidate>
         <div class="form-group">
           <label for="username" data-i18n="label_username">Username</label>
           <input type="text" id="username" name="username" class="form-control" placeholder="Choose a username" required>
@@ -65,20 +65,20 @@
           
           <div class="form-group">
             <label for="cardNumber" data-i18n="label_cardnumber">Card Number</label>
-            <input type="text" id="cardNumber" class="form-control" placeholder="XXXX XXXX XXXX XXXX" required>
+            <input type="text" id="cardNumber" name="cardNumber" class="form-control" placeholder="XXXX XXXX XXXX XXXX" required>
             <div id="cardNumber-error" class="error-message" data-i18n="error_cardnumber">Please enter a valid card number.</div>
           </div>
           
           <div class="form-row">
             <div class="form-group">
               <label for="expiryDate" data-i18n="label_expirydate">Expiry Date</label>
-              <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
+              <input type="text" id="expiryDate" name="expiryDate" class="form-control" placeholder="MM/YY" required>
               <div id="expiryDate-error" class="error-message" data-i18n="error_expirydate">Please enter a valid expiry date.</div>
             </div>
             
             <div class="form-group">
               <label for="cvv" data-i18n="label_cvv">CVV</label>
-              <input type="text" id="cvv" class="form-control" placeholder="123" required>
+              <input type="text" id="cvv" name="cvv" class="form-control" placeholder="123" required>
               <div id="cvv-error" class="error-message" data-i18n="error_cvv">Please enter a valid CVV.</div>
             </div>
           </div>

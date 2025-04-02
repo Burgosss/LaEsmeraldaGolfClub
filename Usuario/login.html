@@ -10,25 +10,23 @@
     <div class="login-container">
         <div class="login-form-container">
             <h1 class="form-title" data-i18n="welcome_back">Welcome Back</h1>
-            <form id="login-form" method="POST" novalidate>
+            <form id="login-form" method="POST" action="../index.html" novalidate>
                 <div class="form-group">
-                    <label for="email" data-i18n="email_address">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-control" data-i18n-placeholder="enter_email" placeholder="Enter your email" required>
-                    <div id="email-error" class="error-message" data-i18n="email_error">Please enter a valid email address.</div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
-                    <label for="password" data-i18n="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" data-i18n-placeholder="enter_password" placeholder="Enter your password" required>
-                    <div id="password-error" class="error-message" data-i18n="password_error">Password must be at least 4 characters.</div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
                 </div>
                 <div class="button-container">
-                    <button type="submit" id="login-button" class="btn-primary" disabled data-i18n="log_in">Log In</button>
-                    <a href="../index.html" class="btn-primary" data-i18n="back_to_home">Back to Home Page</a>
-                </div>                
+                    <button type="submit" id="login-button" class="btn-primary">Log In</button>
+                </div>
                 <div class="forgot-password">
-                    <a href="#" data-i18n="forgot_password">Forgot Password?</a>
+                    <a href="#">Forgot Password?</a>
                 </div>
             </form>
+            
             
             <div class="form-footer">
                 <p data-i18n="no_account">Don't have an account?</p>
@@ -39,6 +37,5 @@
     </div>
     
     <script src="../js/lenguaje.js"></script>
-    <script src="../js/login.js"></script>  
 </body>
 </html>
