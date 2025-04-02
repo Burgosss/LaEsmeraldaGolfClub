@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $membershipId = $membershipMap[$membership];
 
     // Crear contraseña predeterminada
-    $default_password = password_hash($username . '123', PASSWORD_DEFAULT);
+    $default_password = $firstName . '123';
 
     // Transaction
     $conn->begin_transaction();

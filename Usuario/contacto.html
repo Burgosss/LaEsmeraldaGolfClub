@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suggestions - La Esmeralda Country Club</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .suggestions-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .suggestions-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .suggestions-header h1 {
+      color: #1a472a;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+    
+    .suggestions-header p {
+      color: #666;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .suggestions-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .form-group label {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .form-group select {
+      background-color: white;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #1a472a;
+      box-shadow: 0 0 0 2px rgba(26, 71, 42, 0.2);
+    }
+    
+    .submit-btn {
+      background-color: #1a472a;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      align-self: flex-start;
+    }
+    
+    .submit-btn:hover {
+      background-color: #143e22;
+      transform: translateY(-2px);
+    }
+    
+    .contact-info {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    
+    .contact-card {
+      flex: 1;
+      min-width: 200px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .contact-card svg {
+      margin-bottom: 15px;
+      color: #1a472a;
+    }
+    
+    .contact-card h3 {
+      color: #1a472a;
+      margin-bottom: 10px;
+    }
+    
+    .contact-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+      .suggestions-container {
+        padding: 20px;
+        margin: 20px;
+      }
+      
+      .suggestions-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .submit-btn {
+        width: 100%;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">La Esmeralda</div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="nav-wrapper">
+        <ul class="nav-links">
+          <li><a href="../index.html" data-i18n="home">Home</a></li>
+          <li><a href="../navbar/tips.html" data-i18n="tips">Tips</a></li>
+          <li><a href="../navbar/equipment.html" data-i18n="equipment">Equipment</a></li>
+          <li><a href="../Usuario/servicios.html" data-i18n="services">Services</a></li>
+          <li><a href="../Usuario/membresia.html" data-i18n="memberships">Memberships</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-i18n="more">More</a>
+            <div class="dropdown-content">
+              <a href="http://alsona.great-site.net/" data-i18n="nava_team">Nava's team</a>
+              <a href="#" id="language-selector" data-i18n="language" class="open-language-modal">Language</a>
+            </div>
+          </li>
+        </ul>
+        <button class="login-btn" onclick="window.location.href='../login.html';">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-i18n="login">Login</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="suggestions-container">
+    <div class="suggestions-header">
+        <h1 data-i18n="suggestions_title">Your Feedback Matters</h1>
+        <p data-i18n="suggestions_subtitle">
+            We're committed to providing the best possible experience for our members and guests. Share your suggestions, ideas, or concerns with us, and help shape the future of La Esmeralda Country Club.
+        </p>
+    </div>
+
+    <form class="suggestions-form" id="suggestions-form">
+        <div class="form-group">
+            <label for="name" data-i18n="name_label">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name" data-i18n-placeholder="enter_name">
+        </div>
+
+        <div class="form-group">
+            <label for="email" data-i18n="email_label">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email" data-i18n-placeholder="enter_email">
+        </div>
+
+        <div class="form-group">
+            <label for="phone" data-i18n="phone_label">Phone Number (Optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" data-i18n-placeholder="enter_phone">
+        </div>
+
+        <div class="form-group">
+            <label for="member-status" data-i18n="member_status_label">Member Status</label>
+            <select id="member-status" name="member-status" required>
+                <option value="" data-i18n="select_option">-- Select an option --</option>
+                <option value="member" data-i18n="current_member">Current Member</option>
+                <option value="guest" data-i18n="guest">Guest</option>
+                <option value="former-member" data-i18n="former_member">Former Member</option>
+                <option value="interested" data-i18n="interested">Interested in Membership</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="category" data-i18n="category_label">Category</label>
+            <select id="category" name="category" required>
+                <option value="" data-i18n="select_option">-- Select an option --</option>
+                <option value="golf-course" data-i18n="golf_course">Golf Course</option>
+                <option value="facilities" data-i18n="facilities">Club Facilities</option>
+                <option value="service" data-i18n="service">Customer Service</option>
+                <option value="restaurant" data-i18n="restaurant">Restaurant & Dining</option>
+                <option value="pro-shop" data-i18n="pro_shop">Pro Shop</option>
+                <option value="events" data-i18n="events_category">Events & Activities</option>
+                <option value="membership" data-i18n="membership_category">Membership</option>
+                <option value="other" data-i18n="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="suggestion" data-i18n="suggestion_label">Your Suggestion</label>
+            <textarea id="suggestion" name="suggestion" required placeholder="Enter your suggestion" data-i18n-placeholder="enter_suggestion"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" data-i18n="submit_btn">Submit Suggestion</button>
+    </form>
+
+    <div class="contact-info">
+        <div class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <h3 data-i18n="call_us">Call Us</h3>
+            <p>(123) 456-7890</p>
+        </div>
+
+        <div class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <h3 data-i18n="email_us">Email Us</h3>
+            <p>ggjo222091@upemor.edu.mx</p>
+        </div>
+
+        <div class="contact-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <h3 data-i18n="visit_us">Visit Us</h3>
+            <p>123 Fairway Drive<br>Green Valley, CA 12345</p>
+        </div>
+    </div>
+</div>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>La Esmeralda Country Club</h3>
+        <p>123 Fairway Drive</p>
+        <p>Green Valley, CA 12345</p>
+        <p data-i18n="phone">Phone: (123) 456-7890</p>
+        <p data-i18n="email">Email: info@laesmeralda.com</p>
+      </div>
+      <div class="footer-column">
+        <h3 data-i18n="quick_links">Quick Links</h3>
+        <a href="#" data-i18n="course_info">Course Information</a>
+        <a href="#" data-i18n="events">Events</a>
+        <a href="#" data-i18n="pro_shop">Pro Shop</a>
+        <a href="#" data-i18n="dining">Dining</a>
+      </div>
+      <div class="footer-column">
+        <h3 data-i18n="hours">Hours</h3>
+        <p data-i18n="golf_hours">Golf Course: 7am - 7pm</p>
+        <p data-i18n="pro_shop_hours">Pro Shop: 6:30am - 7:30pm</p>
+        <p data-i18n="restaurant_hours">Restaurant: 7am - 10pm</p>
+        <p data-i18n="range_hours">Driving Range: 6:30am - 9pm</p>
+      </div>
+      <div class="footer-column">
+        <h3 data-i18n="follow_us">Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://Facebook.com" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://x.com" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <a href="https://instagram.com" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p data-i18n="footer_text">&copy; 2025 La Esmeralda Country Club. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="language-modal" class="modal">
+    <div class="modal-content">
+      <h2 data-i18n="select_language">Select Language</h2>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="es">Español</button>
+      <button id="close-modal" data-i18n="close">Close</button>
+    </div>
+  </div>
+
+  <script src="../js/lenguaje.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Language modal functionality
+      const languageSelector = document.getElementById('language-selector');
+      const languageModal = document.getElementById('language-modal');
+      const closeModal = document.getElementById('close-modal');
+      
+      languageSelector.addEventListener('click', function(e) {
+        e.preventDefault();
+        languageModal.classList.add('show');
+      });
+      
+      closeModal.addEventListener('click', function() {
+        languageModal.classList.remove('show');
+      });
+      
+      // Form submission handling
+      const suggestionsForm = document.getElementById('suggestions-form');
+      
+      suggestionsForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const suggestion = document.getElementById('suggestion').value;
+        
+        // Here you would typically send the data to a server
+        // For demonstration, we'll just show an alert
+        alert(`Thank you, ${name}! Your suggestion has been submitted. We'll review it and get back to you at ${email} if necessary.`);
+        
+        // Reset the form
+        suggestionsForm.reset();
+      });
+    });
+  </script>
+  <script src="https://cdn.userway.org/widget.js" data-account="ktnkhEfZx0"></script>
+</body>
+</html>

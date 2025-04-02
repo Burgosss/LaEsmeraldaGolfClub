@@ -18,11 +18,12 @@
       </label>
       <div class="nav-wrapper">
         <ul class="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../navbar/tips.html">Tips</a></li>
-          <li><a href="../navbar/equipment.html">Equipment</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="membresia.html">Membership</a></li>
+          <li><a href="../index.html" data-i18n="home">Home</a></li>
+          <li><a href="../navbar/tips.html" data-i18n="tips">Tips</a></li>
+          <li><a href="../navbar/equipment.html" data-i18n="equipment">Equipment</a></li>
+          <li><a href="#" data-i18n="services">Services</a></li>
+          <li><a href="membresia.html" data-i18n="memberships">Membership</a></li>
+          <li><a href="#" id="language-selector" data-i18n="language">Language</a></li>
         </ul>
       </div>
     </div>
@@ -34,11 +35,19 @@
     </div>
 
     <div class="hero-cta">
-        <a href="membresia.html" class="membership-btn">Membership</a>
+        <a href="membresia.html" class="membership-btn" data-i18n="memberships">Membership</a>
     </div>
   </section>
+  <div id="language-modal" class="modal">
+    <div class="modal-content">
+      <h2 data-i18n="select_language">Select Language</h2>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="es">Español</button>
+      <button id="close-modal" data-i18n="close">Close</button>
+    </div>
+  </div>
 
-  
+  <script src="../js/lenguaje.js"></script>
   <script src="js/lenguaje.js"></script> 
 </body>
 </html>

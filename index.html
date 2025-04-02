@@ -18,25 +18,26 @@
       </label>
       <div class="nav-wrapper">
         <ul class="nav-links">
-          <li><a href="">Home</a></li>
-          <li><a href="navbar/tips.html">Tips</a></li>
-          <li><a href="navbar/equipment.html">Equipment</a></li>
-          <li><a href="Usuario/servicios.html">Services</a></li>
-          <li><a href="Usuario/membresia.html">Memberships</a></li>
+          <li><a href="" data-i18n="home">Home</a></li>
+          <li><a href="navbar/tips.html" data-i18n="tips">Tips</a></li>
+          <li><a href="navbar/equipment.html" data-i18n="equipment">Equipment</a></li>
+          <li><a href="Usuario/servicios.html" data-i18n="services">Services</a></li>
+          <li><a href="Usuario/membresia.html" data-i18n="memberships">Memberships</a></li>
+          <li><a href="Usuario/contacto.html" data-i18n="suggestions">Suggestions</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle">More</a>
+            <a href="#" class="dropdown-toggle" data-i18n="more">More</a>
             <div class="dropdown-content">
-              <a href="http://alsona.great-site.net/">Nava's team</a>
-              <a href="#" id="language-selector">Language</a>
+              <a href="http://alsona.great-site.net/" data-i18n="nava_team">Nava's team</a>
+              <a href="#" id="language-selector" data-i18n="language" class="open-language-modal">Language</a>
             </div>
           </li>
         </ul>
-        <button class="login-btn" onclick=" window.location.href='Usuario/login.html';">
+        <button class="login-btn" onclick="window.location.href='Usuario/login.html';">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
-          Login
+          <span data-i18n="login">Login</span>
         </button>
       </div>
     </div>
@@ -44,7 +45,7 @@
  
   <section class="carousel-section">
     <div class="section-header">
-      <h2>Explore Our Stunning Facilities</h2>
+      <h2 data-i18n="explore_facilities">Explore Our Stunning Facilities</h2>
     </div>
   
     <div class="carousel-container">
@@ -60,8 +61,8 @@
           <li class="carousel-slide current-slide">
             <img src="img/robert-ruggiero-pI6IaynZQ_I-unsplash.jpg" alt="Golf course fairway with mountains in background" class="carousel-image">
             <div class="slide-content">
-              <h2>Championship Golf Course</h2>
-              <p>Experience our award-winning 18-hole course</p>
+              <h2 data-i18n="championship_golf">Championship Golf Course</h2>
+              <p data-i18n="golf_course_desc">Experience our award-winning 18-hole course</p>
             </div>
           </li>
           
@@ -69,8 +70,8 @@
           <li class="carousel-slide">
             <img src="img/frederico-ferreira-6BigkR3-N2A-unsplash.jpg" alt="Elegant clubhouse exterior" class="carousel-image">
             <div class="slide-content">
-              <h2>Luxurious Clubhouse</h2>
-              <p>Relax in our newly renovated facilities</p>
+              <h2 data-i18n="luxurious_clubhouse">Luxurious Clubhouse</h2>
+              <p data-i18n="clubhouse_desc">Relax in our newly renovated facilities</p>
             </div>
           </li>
           
@@ -78,8 +79,8 @@
           <li class="carousel-slide">
             <img src="img/jason-leung-poI7DelFiVA-unsplash.jpg" alt="Fine dining restaurant with golf course view" class="carousel-image">
             <div class="slide-content">
-              <h2>Fine Dining</h2>
-              <p>Savor exceptional cuisine with panoramic views</p>
+              <h2 data-i18n="fine_dining">Fine Dining</h2>
+              <p data-i18n="dining_desc">Savor exceptional cuisine with panoramic views</p>
             </div>
           </li>
           
@@ -87,8 +88,8 @@
           <li class="carousel-slide">
             <img src="img/mick-haupt-m0iXio5FF7M-unsplash.jpg" alt="Professional golf instruction" class="carousel-image">
             <div class="slide-content">
-              <h2>Expert Instruction</h2>
-              <p>Improve your game with our PGA professionals</p>
+              <h2 data-i18n="expert_instruction_slide">Expert Instruction</h2>
+              <p data-i18n="instruction_desc">Improve your game with our PGA professionals</p>
             </div>
           </li>
         </ul>
@@ -109,7 +110,7 @@
     </div>
     
     <div class="hero-cta">
-      <a href="#" class="cta-btn" id="book-tee-time">Book a Tee Time</a>
+      <a href="#" class="cta-btn" id="book-tee-time" data-i18n="book_tee_time">Book a Tee Time</a>
     </div>
     
   </section>
@@ -120,8 +121,8 @@
         <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
         <line x1="4" y1="22" x2="4" y2="15"></line>
       </svg>
-      <h3>Championship Course</h3>
-      <p>Our 18-hole championship course offers a challenging yet enjoyable experience for golfers of all skill levels.</p>
+      <h3 data-i18n="championship_course">Championship Course</h3>
+      <p data-i18n="championship_course_desc">Our 18-hole championship course offers a challenging yet enjoyable experience for golfers of all skill levels.</p>
     </div>
     <div class="feature-card">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a472a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -129,8 +130,8 @@
         <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
         <line x1="12" y1="17" x2="12.01" y2="17"></line>
       </svg>
-      <h3>Expert Instruction</h3>
-      <p>Learn from our PGA-certified professionals and improve your game with personalized coaching sessions.</p>
+      <h3 data-i18n="expert_instruction">Expert Instruction</h3>
+      <p data-i18n="expert_instruction_desc">Learn from our PGA-certified professionals and improve your game with personalized coaching sessions.</p>
     </div>
     <div class="feature-card">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a472a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -139,8 +140,8 @@
         <line x1="12" y1="16" x2="12" y2="12"></line>
         <path d="M9 10l.5-.5A2 2 0 0 1 12 8a2 2 0 0 1 2.5 1.5L15 10c0 .707-.707 1.5-2 2-1.293-.5-2-1.293-2-2z"></path>
       </svg>
-      <h3>Premium Facilities</h3>
-      <p>Enjoy our clubhouse, pro shop, fine dining restaurant, and practice facilities with state-of-the-art amenities.</p>
+      <h3 data-i18n="premium_facilities">Premium Facilities</h3>
+      <p data-i18n="premium_facilities_desc">Enjoy our clubhouse, pro shop, fine dining restaurant, and practice facilities with state-of-the-art amenities.</p>
     </div>
   </section>
   
@@ -150,25 +151,25 @@
         <h3>La Esmeralda Country Club</h3>
         <p>123 Fairway Drive</p>
         <p>Green Valley, CA 12345</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Email: info@laesmeralda.com</p>
+        <p data-i18n="phone">Phone: (123) 456-7890</p>
+        <p data-i18n="email">Email: info@laesmeralda.com</p>
       </div>
       <div class="footer-column">
-        <h3>Quick Links</h3>
-        <a href="#">Course Information</a>
-        <a href="#">Events</a>
-        <a href="#">Pro Shop</a>
-        <a href="#">Dining</a>
+        <h3 data-i18n="quick_links">Quick Links</h3>
+        <a href="#" data-i18n="course_info">Course Information</a>
+        <a href="#" data-i18n="events">Events</a>
+        <a href="#" data-i18n="pro_shop">Pro Shop</a>
+        <a href="#" data-i18n="dining">Dining</a>
       </div>
       <div class="footer-column">
-        <h3>Hours</h3>
-        <p>Golf Course: 7am - 7pm</p>
-        <p>Pro Shop: 6:30am - 7:30pm</p>
-        <p>Restaurant: 7am - 10pm</p>
-        <p>Driving Range: 6:30am - 9pm</p>
+        <h3 data-i18n="hours">Hours</h3>
+        <p data-i18n="golf_hours">Golf Course: 7am - 7pm</p>
+        <p data-i18n="pro_shop_hours">Pro Shop: 6:30am - 7:30pm</p>
+        <p data-i18n="restaurant_hours">Restaurant: 7am - 10pm</p>
+        <p data-i18n="range_hours">Driving Range: 6:30am - 9pm</p>
       </div>
       <div class="footer-column">
-        <h3>Follow Us</h3>
+        <h3 data-i18n="follow_us">Follow Us</h3>
         <div class="social-icons">
           <a href="https://Facebook.com" aria-label="Facebook">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -191,19 +192,21 @@
       </div>
     </div>
     <div class="copyright">
-      <p>&copy; 2025 La Esmeralda Country Club. All rights reserved.</p>
+      <p data-i18n="footer_text">&copy; 2025 La Esmeralda Country Club. All rights reserved.</p>
     </div>
   </footer>
 
   <div id="language-modal" class="modal">
     <div class="modal-content">
-      <h2>Select Language</h2>
+      <h2 data-i18n="select_language">Select Language</h2>
       <button class="lang-btn" data-lang="en">English</button>
       <button class="lang-btn" data-lang="es">Español</button>
-      <button id="close-modal">Close</button>
+      <button id="close-modal" data-i18n="close">Close</button>
     </div>
   </div>
 
+  <script src="js/lenguaje.js"></script>
   <script src="js/carrusel.js"></script>
+  <script src="https://cdn.userway.org/widget.js"&quot; data-account="ktnkhEfZx0"></script>
 </body>
 </html>

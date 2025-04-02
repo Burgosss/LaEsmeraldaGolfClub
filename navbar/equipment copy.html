@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="equipment_title">Golf Equipment - La Esmeralda Country Club</title>
+  <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles_navbar.css">
+  
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">La Esmeralda</div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="nav-wrapper">
+        <ul class="nav-links">
+          <li><a href="../index.html" data-i18n="home">Home</a></li>
+          <li><a href="tips.html" data-i18n="tips">Tips</a></li>
+          <li><a href="#" class="active" data-i18n="equipment">Equipment</a></li>
+          <li><a href="../Usuario/servicios.html" data-i18n="services">Services</a></li>
+          <li><a href="../Usuario/membresia.html" data-i18n="memberships">Membership</a></li>
+          <li class="dropdown">
+        </ul>
+        <button class="login-btn" onclick="window.location.href='../Usuario/login.html';">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span data-i18n="login">Login</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="material-container">
+    <div class="material-header">
+      <h1 data-i18n="golf_equipment">Golf Equipment</h1>
+      <p data-i18n="des_equipment">Discover our selection of high-quality equipment and accessories</p>
+    </div>
+    
+    <div class="equipment-categories">
+      <div class="equipment-category">
+        <div class="category-image">
+          <img src="../img/palos.jpg" alt="Golf clubs">
+        </div>
+        <div class="category-content">
+          <h3 data-i18n="golf_clubs">Golf Clubs</h3>
+          <p data-i18n="golf_clubs_desc">Drivers, irons, wedges, and putters from the best brands on the market.</p>
+          <a href="#" class="browse-btn" data-i18n="view_products">View Products</a>
+        </div>
+      </div>
+      
+      <div class="equipment-category">
+        <div class="category-image">
+          <img src="../img/bolsas.jpg" alt="Golf bags">
+        </div>
+        <div class="category-content">
+          <h3 data-i18n="golf_bags">Golf Bags</h3>
+          <p data-i18n="golf_bags_desc">Stand bags, cart bags, and travel bags with functional and elegant designs.</p>
+          <a href="#" class="browse-btn" data-i18n="view_products">View Products</a>
+        </div>
+      </div>
+      
+      <div class="equipment-category">
+        <div class="category-image">
+          <img src="../img/bolas.jpg" alt="Golf balls">
+        </div>
+        <div class="category-content">
+          <h3 data-i18n="golf_balls">Golf Balls</h3>
+          <p data-i18n="golf_balls_desc">Balls for all playing levels with different performance features.</p>
+          <a href="#" class="browse-btn" data-i18n="view_products">View Products</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="featured-products">
+      <div class="featured-header">
+        <h2 data-i18n="featured_products">Featured Products</h2>
+      </div>
+      
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="../img/taylorMade.jpg" alt="TaylorMade Driver">
+          </div>
+          <div class="product-details">
+            <div class="product-name" data-i18n="taylor_driver">TaylorMade Stealth 2 Driver</div>
+            <div class="product-description" data-i18n="taylor_driver_desc">Driver with carbon face technology for higher ball speed and distance.</div>
+            <div class="product-price" data-i18n="taylormade_driver_price">€599.99</div>
+            <div class="product-actions">
+              <a href="#" class="details-btn" data-i18n="details">Details</a>
+              <button class="add-to-cart" data-i18n="buy">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <section class="fitting-section">
+    <div class="fitting-container">
+      <div class="fitting-content">
+        <h2 data-i18n="fitting_title">Personalized Fitting Service</h2>
+        <p data-i18n="fitting_desc">At La Esmeralda Country Club, we believe that properly fitted equipment is essential to improving your game. Our personalized fitting service will help you find the perfect clubs for your swing.</p>
+        <a href="#" class="browse-btn" data-i18n="book_fitting">Book a Fitting Session</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="material-container">
+    <div class="featured-header">
+      <h2 data-i18n="repair_services">Repair and Maintenance Services</h2>
+    </div>
+    
+    <div class="equipment-categories">
+      <div class="equipment-category">
+        <div class="category-image">
+          <img src="../img/agarre.jpg" alt="Regripping service">
+        </div>
+        <div class="category-content">
+          <h3 data-i18n="grip_replacement">Grip Replacement</h3>
+          <p data-i18n="grip_replacement_desc">Renew your grips to improve control and comfort when holding your clubs.</p>
+          <a href="#" class="browse-btn" data-i18n="more_info">More Information</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>La Esmeralda Country Club</h3>
+        <p>123 Fairway Drive</p>
+        <p>Green Valley, CA 12345</p>
+        <p data-i18n="phone">Phone: (123) 456-7890</p>
+        <p data-i18n="email">Email: info@laesmeralda.com</p>
+      </div>
+      <div class="footer-column">
+        <h3 data-i18n="quick_links">Quick Links</h3>
+        <a href="#" data-i18n="course_info">Course Information</a>
+        <a href="#" data-i18n="events">Events</a>
+        <a href="#" data-i18n="pro_shop">Pro Shop</a>
+        <a href="#" data-i18n="dining">Dining</a>
+      </div>
+      <div class="footer-column">
+        <h3 data-i18n="hours">Hours</h3>
+        <p data-i18n="golf_hours">Golf Course: 7am - 7pm</p>
+        <p data-i18n="pro_shop_hours">Pro Shop: 6:30am - 7:30pm</p>
+        <p data-i18n="restaurant_hours">Restaurant: 7am - 10pm</p>
+        <p data-i18n="range_hours">Driving Range: 6:30am - 9pm</p>
+      </div>
+      <div class="footer-column">
+        <h3 data-i18n="follow_us">Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://Facebook.com" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://x.com" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <a href="https://instagram.com" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p data-i18n="footer_text">&copy; 2025 La Esmeralda Country Club. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/lenguaje.js"></script>
+</body>
+</html>
