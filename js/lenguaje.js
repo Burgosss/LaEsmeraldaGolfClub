@@ -9,6 +9,7 @@ const traducciones = {
       more: "Más",
       nava_team: "Equipo de Nava",
       language: "Idioma",
+      welcome: "Bienvenido",
       login: "Iniciar Sesión",
       
       // Carousel section
@@ -219,6 +220,7 @@ const traducciones = {
       more: "More",
       nava_team: "Nava's Team",
       language: "Language",
+      welcome: "Welcome",
       login: "Login",
       
       // Carousel section

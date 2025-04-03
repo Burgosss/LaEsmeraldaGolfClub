@@ -7,41 +7,48 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">La Esmeralda</div>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <div class="nav-wrapper">
-        <ul class="nav-links">
-          <li><a href="" data-i18n="home">Home</a></li>
-          <li><a href="navbar/tips.html" data-i18n="tips">Tips</a></li>
-          <li><a href="navbar/equipment.html" data-i18n="equipment">Equipment</a></li>
-          <li><a href="Usuario/servicios.html" data-i18n="services">Services</a></li>
-          <li><a href="Usuario/membresia.html" data-i18n="memberships">Memberships</a></li>
-          <li><a href="Usuario/contacto.html" data-i18n="suggestions">Suggestions</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-i18n="more">More</a>
-            <div class="dropdown-content">
-              <a href="http://alsona.great-site.net/" data-i18n="nava_team">Nava's team</a>
-              <a href="#" id="language-selector" data-i18n="language" class="open-language-modal">Language</a>
-            </div>
-          </li>
-        </ul>
-        <button class="login-btn" onclick="window.location.href='Usuario/login.html';">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          <span data-i18n="login">Login</span>
-        </button>
-      </div>
+<?php
+session_start();
+?>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">La Esmeralda</div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div class="nav-wrapper">
+      <ul class="nav-links">
+        <li><a href="" data-i18n="home">Home</a></li>
+        <li><a href="navbar/tips.html" data-i18n="tips">Tips</a></li>
+        <li><a href="navbar/equipment.html" data-i18n="equipment">Equipment</a></li>
+        <li><a href="Usuario/servicios.html" data-i18n="services">Services</a></li>
+        <li><a href="Usuario/membresia.html" data-i18n="memberships">Memberships</a></li>
+        <li><a href="Usuario/contacto.html" data-i18n="suggestions">Suggestions</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-i18n="more">More</a>
+          <div class="dropdown-content">
+            <a href="http://alsona.great-site.net/" data-i18n="nava_team">Nava's team</a>
+            <a href="#" id="language-selector" data-i18n="language" class="open-language-modal">Language</a>
+          </div>
+        </li>
+      </ul>
+      <button class="login-btn" 
+              <?php if (isset($_SESSION['user'])): ?>
+                  onclick="window.location.href='Usuario/dashboard.php';">
+                  <span>Welcome<?php echo $_SESSION['user_name']; ?></span>
+              <?php else: ?>
+                  onclick="window.location.href='Usuario/login.html';">
+                  <span data-i18n="login">Login</span>
+              <?php endif; ?>
+      </button>
     </div>
-  </nav>
+  </div>
+</nav>
+
  
   <section class="carousel-section">
     <div class="section-header">

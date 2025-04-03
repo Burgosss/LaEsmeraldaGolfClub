@@ -1,0 +1,221 @@
+/* dashboard.css */
+.dashboard-welcome {
+    background-color: #1a472a;
+    color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .welcome-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .welcome-container h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+  }
+  
+  .dashboard-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 320px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .dashboard-card svg {
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-card h3 {
+    color: #1a472a;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dashboard-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-btn {
+    display: inline-block;
+    background-color: #1a472a;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-btn:hover {
+    background-color: #143d23;
+  }
+  
+  .recent-activity, .weather-forecast {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+  }
+  
+  .recent-activity h2, .weather-forecast h2 {
+    color: #1a472a;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .activity-list {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .activity-item {
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .activity-item:last-child {
+    border-bottom: none;
+  }
+  
+  .activity-date {
+    flex: 0 0 100px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .activity-details {
+    flex: 1;
+  }
+  
+  .activity-details h4 {
+    margin: 0 0 0.25rem;
+    color: #1a472a;
+  }
+  
+  .activity-details p {
+    margin: 0;
+    color: #666;
+  }
+  
+  .weather-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .weather-day {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .weather-day h3 {
+    margin-top: 0;
+    color: #1a472a;
+  }
+  
+  .weather-icon {
+    margin: 1rem 0;
+  }
+  
+  .weather-temp {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .weather-desc {
+    color: #666;
+  }
+  
+  .user-menu {
+    position: relative;
+  }
+  
+  .user-btn {
+    display: flex;
+    align-items: center;
+    background-color: #1a472a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-btn:hover {
+    background-color: #143d23;
+  }
+  
+  .user-btn svg {
+    margin-right: 0.5rem;
+  }
+  
+  .user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    min-width: 150px;
+    z-index: 1000;
+    display: none;
+  }
+  
+  .user-dropdown.active {
+    display: block;
+  }
+  
+  .user-dropdown a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-dropdown a:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .weather-container {
+      flex-direction: column;
+    }
+    
+    .activity-item {
+      flex-direction: column;
+    }
+    
+    .activity-date {
+      margin-bottom: 0.5rem;
+    }
+  }
